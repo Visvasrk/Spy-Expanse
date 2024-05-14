@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spy Expanse</title>
+    <script></script>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<p style="display:none;">JS</p>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+  AOS.init();
+</script>
+
+
+
+<script>
+function openNav() {
+  document.getElementById("sidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("sidenav").style.width = "0";
+}
+
+</script>
+<!-- style sheet...-->
+<style>
+    
+    *{
+        transition:3s;
+        text-decoration:none;
+    }
+    body {
+           background-image:url('https://media.istockphoto.com/id/1351817308/vector/cyber-network-vision-digital-communication-cloud.jpg?s=612x612&w=0&k=20&c=gvc7_G0DTcU5ulKRA54cBJ7fymmXlMddWGqpi8RKdok=');
+           background-size: cover;
+           background-position:center;
+           width:100%;
+       }
+    .container1 {
+        height:auto;
+        width:100%;
+        height:100%
+        margin: 50px auto;
+        padding: 30px;
+        border-radius: 10px;
+        background-color: #161a2ca4; /* Change background color to improve readability */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+    .message-container {
+        overflow-y: auto;
+        max-height: 400px; /* Limit height to enable scrolling */
+    }
+    .message {
+        position: relative;
+        padding: 12px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+        max-width: 90%; /* Limit message width */
+        background-color: #DCF8C6; /* Change sent message bubble color */
+        position: relative;
+    }
+    .message.sent {
+        align-self: flex-end;
+        background-color: #0e101bed; /* Change sent message bubble color */
+    }
+    .message.received {
+        background-color: #03140df4; /* Change received message bubble color */
+    }
+    .message-info {
+        font-size: 12px;
+        color: #999;
+        margin-top: 5px;
+    }
+    .options-btn {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: #999;
+    }
+    .options-menu {
+        display: none;
+        position: absolute;
+        top: 25px;
+        right: 0;
+        background-color: #FFF;
+        border-radius: 5px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+    .options-menu a {
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+        color: #333;
+    }
+    .options-menu a:hover {
+        background-color: #f1f1f1;
+    }
+    header{
+            background-image: url('https://www.shutterstock.com/image-illustration/3d-render-illustration-male-detective-260nw-2228762655.jpg');
+            color: white;
+            height:auto;
+            width:100%;
+            padding:30px;
+            border:none;
+            text-align:center;
+            background-size:cover;
+            background-postion:fixed;
+    
+    .title{
+        color:white;
+        font-family:Courier;
+        font-size: 35px;
+        font-weight:bolder;
+        float:none;
+        text-align: left;
+    }       
+    .sidenav {
+  height:1000px;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #030720ef;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.heading{
+    color:red;
+    
+    
+}
+
+.nav-link{
+    color:white;
+    font-weight:bolder;
+}
+.cards{
+    height:auto;
+    width: 100%;
+    text-align:center;
+    background:#00012bf6;
+    color: lightblue;
+}
+
+
+</style>
+</head>
+<body>
+    <header >
+ <div class="sidenav" id="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a><br>
+            <a href="" class="cards">News</a>
+            <a href="" class="cards">Missions</a>
+            <a href="" class="cards">Members</a>
+            <a href="" class="cards">Ranks</a>
+            
+            
+ </div>       
+        
+        
+        <span style="font-size:30px;cursor:pointer;float:left;" onclick="openNav()">&#9776;</span><br><br>
+        
+        
+        <div style="text-align:right">
+         <h1 class="Title" data-aos="fade-right" data-aos-delay="700">
+            The Spy<br> Expanse
+        </h1>
+        <kbd data-aos="fade-down" data-aos-delay="1400" style="text-align:left;">Discover the truths and characteristics of the spy universe of the world. Informations regarding all secret intelligence agencies in the world. </kbd>
+        </div>
+        
+        <div class="container mt-3" data-aos="fade-up" data-aos-delay="2100">
+            <br>
+  <!-- Nav pills -->
+  <ul class="nav nav-pills" role="tablist">
+      
+    <li class="nav-item">
+      <a class="nav-link active" data-bs-toggle="pill" href="#home">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="pill" href="#docs">Documents</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="pill" href="#chat">Chat</a>
+    </li>
+  </ul>
+        </div>
+        
+    </header>
+    <section data-aos="fade-left" data-aos-delay="2800">
+        <!-- Tab panes -->
+  <div class="tab-content">
+      <!-- home -->
+    <div id="home" class="container tab-pane active"style="background:#040818e1;color:white;padding:20px;font-family:inconsolata;height:auto;"><br>
+    <!-- card1start -->
+    <div class="card" style="width:100%;background:#ffffffc6;" data-aos="fade-left" data-aos-delay="6000">
+        <div class="card-body">
+        <h3 class="card-title">Intro</h3>
+        <h5 class="card-subtitle mb-2 text-muted">Information</h5>
+        <p class="card-text" style="color:green;float:right;">Hello guys...<br> Welcome you all to this information center about all the truths you should know in this dark and deep world...<br>
+        Information is provided from the dark web as per the act of FOIA... 
+        </p>
+        <p class="card-text">Visit the following links for getting more knowledge...<br><b>Information is Wealth and also Weapon...</b></p>
+        <a href="https://play.google.com/store/apps/details?id=org.torproject.torbrowser" class="card-link">Tor Browser</a>
+        <a href="https://play.google.com/store/apps/details?id=com.windscribe.vpn" class="card-link">Windscribe</a>
+        </div>
+    </div>
+    <!-- card1end -->
+    <br>
+    <!-- startcard2 -->
+    <div class="card" style="width:100%;background:#00000018;color:white;" data-aos="fade-left" data-aos-delay="7000">
+        <div class="card-body">
+        <h3 class="card-title text-info">Motto</h3>    
+        <h5 class="card-subtitle text-muted" style="color:lightgreen;">The More You Know</h5>
+        <p class="card-text"><b>The More You Know</b> serves as a timeless reminder that knowledge is not just <em>power</em> but a <em>journey</em>.<br> With every piece of information acquired, we expand our understanding of the world, fostering growth, empathy, and progress. Embrace curiosity, for it is the key to unlocking the vast universe of possibilities awaiting discovery.</p>
+        <p class="card-footer"><b>Kinda,discover the Truth</b>
+        </div>
+    </div>
+    <!-- endcard2-->
+    <br>
+    <!-- start card3 -->
+    <div class="card" data-aos="fade-left" data-aos-delay="8000" style="width:100%;background:#00000000;color:white;">
+        <div class="card-body">
+        <h3 class="card-title text-primary">Deciphering Secrets</h3>    
+        <h5 class="card-subtitle text-muted">Your Gateway to the Undercover Universe</h5>
+        <p class="card-text"><b>Embark on a riveting journey into the clandestine world of espionage</b>, where every shadow holds a story and every whisper conceals a truth waiting to be unraveled. Our platform serves as your exclusive gateway to the undercover universe, offering unprecedented access to the tools, tactics, and tales of espionage.<br><br> Whether you're a novice intrigued by the mystique of spycraft or a seasoned agent seeking to hone your skills, join us as we decode secrets, navigate covert operations, and <em>illuminate</em> the hidden corners of the intelligence landscape. The adventure begins here, where curiosity meets espionage, and knowledge becomes your most potent weapon.</p>
+        </div>
+    </div>
+    <!-- endcard3 -->
+    <br>
+    <!-- start card4 -->
+    <div class="card" style="background:#00000000;width:100%;color:white;" data-aos="fade-left" data-aos-delay="7000">
+        <div class="card-body">
+        <h3 class="card-title" style="color:lightgreen;">Unlocking Classified</h3>    
+        <h5 class="card-subtitle text-muted">Your Portal to Classified Information and Covert Missions</h5>
+        <p class="card-text"><b>Dive deep into the clandestine world of espionage with our exclusive access to classified information and covert missions.</b> Explore the inner workings of intelligence agencies as we unveil the secrets behind historic operations and contemporary endeavors. <br><br>Gain insights from seasoned operatives on the ethical considerations inherent in espionage and the delicate balance between national security and individual freedoms. <em>From cutting-edge technology to historical perspectives, join us as we navigate the complexities of global intelligence gathering and prepare for the challenges of tomorrow's world.</em></p>
+        <div class="card-footer">
+        <b>
+            Welcome to your portal to the intriguing world of espionage, where knowledge is power, and vigilance is paramount.
+        </b><br><br>
+        <button class="btn btn-success"><a href="https://www.cia.gov/resources/csi/" class="card-link" style="text-decoration:none;color:black;">Center of Study of Intelligence</a></button><br>
+        <code>From CIA's Official Website</code>
+        </div>
+        </div>
+    </div>
+    <!-- endcard4 --><br>
+    <!-- start card5 -->
+    <div class="card" data-aos="fade-left" data-aos-delay="8000" style="background:#00000000;width:100%;color:whitesmoke;">
+        <div class="card-body">
+        <h3 class="card-title text-success">Training and Preparation</h3>    
+        <h5 class="card-subtitle text-muted">Equipping You for the Espionage Arena</h5>
+        <p class="card-text">
+        <b>Stay ahead of the curve with access to the latest advancements in espionage technology, from state-of-the-art surveillance equipment to cutting-edge encryption methods.</b> Discover how innovation is reshaping the landscape of intelligence gathering and adapt your skills accordingly.<br><br><em>Join a vibrant community of fellow enthusiasts and practitioners, exchanging insights, strategies, and support in a collaborative environment.</em>     
+        </p>
+        <div class="card-footer">
+        <b>Forge connections with like-minded individuals who share your passion for espionage and are committed to excellence in every aspect of their craft.</b><br><br>
+        <h6>Given here are some useful links for training...</h6><br>
+        <button class="btn btn-success"><a href="https://spyscape.com/" class="card-link" style="text-decoration:none;color:black;">Spyscape</a></button>
+        <button class="btn btn-success"><a href="https://www.cia.gov/" class="card-link" style="text-decoration:none;color:black;">CIA</a></button>
+        <button class="btn btn-success"><a href="https://www.army.mil/" class="card-link" style="text-decoration:none;color:black;">US Army</a></button>     
+        </div>
+        </div>
+    </div>
+    <!-- endcard5 --><br>
+    
+    </div>
+    <!-- end home -->
+    <!-- docs -->
+    <div id="docs" class="container tab-pane fade" style="background:#020a19d5;color:;padding:;font-family:;"><br>
+    <div class="container-fluid">
+        <div class="card-dark text-white">
+            <div class="card-body">
+            <h1>Welcome to the <code>Document Center</code></h1>
+            </div>
+        </div>
+        <br>
+        <!-- start card1 -->
+    <div class="card" style="font-family:monospace;background:#000000d4;color:white;">
+        <div class="card-body">
+        <h3 class="card-title">Introducing Docs</h3>    
+        <h5 class="card-subtitle text-muted">Know the basic details about Docs</h5>
+        <p class="card-text" style="color:red;">Spy Expanse is a comprehensive document detailing the expansion and evolution of espionage activities in recent years. It covers a wide range of topics, including technological advancements, global trends, and emerging threats in the world of espionage.</p>
+        </div>
+    </div><br><!-- endcard1-->
+    <!-- start card2 -->
+    <div class="card" style="background:#00000000;color:white;">
+        <div class="card-body">
+        <h3 class="card-title">Documents List</h3>    
+        <h5 class="card-subtitle text-muted">Till now no documents are posted...</h5>
+        <p class="card-text" style="color:"></p>
+        </div>
+    </div><br>
+    <!-- endcard2 -->
+    </div>
+    
+     
+    </div>
+    <!-- end docs -->
+    <!-- chats -->
+    
+    <div id="chat" class="container tab-pane fade" style="color:White;padding:20px;font-family:courier;background:#000000df;"><br>
+    <div class="container1">
+    <h1><b>Infos And Updates</b></h1>
+    <div class="message-container" id="message-container"></div>
+    <!-- message container above -->
+    
+    
+           
+        
+        <div class="input-group">
+        <input type="file" class="custom-file-input" id="fileInput" style="display:none;">
+        <label class="btn btn-primary" for="fileInput">&#128206;</label><br>
+        <input width="80%" type="text" class="form-control" id="textInput" placeholder="Type your message...">       
+        <div class="input-group-append">
+            <button class="btn btn-primary" style="height:38px;" type="button" onclick="sendMessage()">Send</button>
+        </div>
+        </div>
+        <!-- input group ends -->
+        <div class="input-group-prepend">
+            <button class="btn btn-light" type="button" id="bold"><i class="fas fa-bold"></i></button>
+            <button class="btn btn-light" type="button" id="italic"><i class="fas fa-italic"></i></button>
+            <button class="btn btn-light" type="button" id="underline"><i class="fas fa-underline"></i></button>
+            <button class="btn btn-light" onclick="more()">More</button>
+            </div>
+            
+            <div style="display:none;"class="input-group-prepend" id="more">
+            <input style="width:44px;height:30px;" type="color" id="fontColor" value="#ffffff">
+            <input style="width:44px;height:30px;" type="number" id="fontSize" min="8" max="40" value="16">
+            <select style="width:200px;height:33px;" id="fontFamily" class="custom-select">
+                <option value="Arial">Arial</option>
+                <option value="Times New Roman">Times New Roman</option>
+                <option value="Verdana">Verdana</option>
+                <option value="Courier New">Courier New</option>
+            </select>
+            <button onclick="closemore()"class="btn btn-danger">x</button>
+    
+            </div>
+    
+</div>
+
+ 
+    </div>
+    <!-- endchats-->
+  
+
+        
+        
+    </section>
+
+<!-- chat script -->      
+<script>
+    // Load messages from local storage on page load
+    window.onload = function() {
+        var messages = localStorage.getItem('messages');
+        if (messages) {
+            document.getElementById('message-container').innerHTML = messages;
+        }
+    };
+
+    function sendMessage() {
+        var textMessage = document.getElementById("textInput").value;
+        var fileInput = document.getElementById("fileInput");
+        var file = fileInput.files[0];
+
+        // Check if either textMessage or file is present
+        if (!textMessage.trim() && !file) {
+            alert("Please enter a message or upload a file.");
+            return;
+        }
+
+        var message = '<div class="message sent">';
+        if (file) {
+            if (file.type.startsWith('image')) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    message += '<img src="' + e.target.result + '" alt="' + file.name + '" title="' + file.name + '">';
+                    message += '<div class="message-info">' + getCurrentTime() + '</div>';
+                    message += '<button class="options-btn" onclick="toggleOptionsMenu(this)"><i class="fas fa-ellipsis-v"></i></button>';
+                    message += '<div class="options-menu" style="display:none;">';
+                    message += '<a href="' + e.target.result + '" download="' + file.name + '">Download</a>';
+                    message += '<a href="#" onclick="deleteMessage(this)">Delete</a>';
+                    message += '</div>';
+                    message += '</div>';
+                    appendMessage(message);
+                };
+                reader.readAsDataURL(file);
+            } else {
+                message += '<a href="' + URL.createObjectURL(file) + '" target="_blank">' + file.name + '</a>';
+                message += '<div class="message-info">' + getCurrentTime() + '</div>';
+                message += '<button class="options-btn" onclick="toggleOptionsMenu(this)"><i class="fas fa-ellipsis-v"></i></button>';
+                message += '<div class="options-menu" style="display:none;">';
+                message += '<a href="' + URL.createObjectURL(file) + '" download="' + file.name + '">Download</a>';
+                message += '<a href="#" onclick="deleteMessage(this)">Delete</a>';
+                message += '</div>';
+                message += '</div>';
+                appendMessage(message);
+            }
+        } else {
+            message += formatTextInsideMessage(textMessage);
+            message += '<div class="message-info">You • ' + getCurrentTime() + '</div>';
+            message += '<button class="options-btn" onclick="toggleOptionsMenu(this)"><i class="fas fa-ellipsis-v"></i></button>';
+            message += '<div class="options-menu" style="display:none;">';
+            message += '<a href="#" onclick="deleteMessage(this)">Delete</a>';
+            message += '</div>';
+            message += '</div>';
+            appendMessage(message);
+        }
+
+        // Save messages to local storage
+        localStorage.setItem('messages', document.getElementById('message-container').innerHTML);
+
+        document.getElementById("textInput").value = "";
+        fileInput.value = "";
+    }
+
+    function appendMessage(message) {
+        document.getElementById("message-container").innerHTML += message;
+        scrollToBottom();
+    }
+
+    function scrollToBottom() {
+        var messageContainer = document.getElementById("message-container");
+        messageContainer.scrollTop = messageContainer.scrollHeight;
+    }
+
+    function getCurrentTime() {
+        var now = new Date();
+        var hours = now.getHours();
+        var minutes = now.getMinutes();
+        var ampm = hours >= 12 ? 'PM' : 'AM';
+        hours = hours % 12;
+        hours = hours ? hours : 12; // Handle midnight (0 hours)
+        minutes = minutes < 10 ? '0' + minutes : minutes; // Add leading zero if needed
+        return hours + ':' + minutes + ' ' + ampm;
+    }
+
+    function toggleOptionsMenu(button) {
+        var optionsMenu = button.nextElementSibling;
+        if (optionsMenu.style.display === "block") {
+            optionsMenu.style.display = "none";
+        } else {
+            closeAllOptionMenus();
+            optionsMenu.style.display = "block";
+        }
+    }
+
+    function closeAllOptionMenus() {
+        var optionsMenus = document.getElementsByClassName("options-menu");
+        for (var i = 0; i < optionsMenus.length; i++) {
+            optionsMenus[i].style.display = "none";
+        }
+    }
+
+    function deleteMessage(deleteLink) {
+        var message = deleteLink.parentNode.parentNode;
+        message.parentNode.removeChild(message);
+        // Update local storage after deleting the message
+        localStorage.setItem('messages', document.getElementById('message-container').innerHTML);
+    }
+
+    function formatTextInsideMessage(text) {
+        var bold = document.getElementById('bold').classList.contains('active');
+        var italic = document.getElementById('italic').classList.contains('active');
+        var underline = document.getElementById('underline').classList.contains('active');
+        var fontColor =document.getElementById('fontColor').value;
+        var fontSize = document.getElementById('fontSize').value + 'px';
+        var fontFamily = document.getElementById('fontFamily').value;
+
+        var style = 'color: ' + fontColor + '; font-size: ' + fontSize + '; font-family: ' + fontFamily + ';';
+
+        if (bold) {
+            text = '<b>' + text + '</b>';
+        }
+        if (italic) {
+            text = '<i>' + text + '</i>';
+        }
+        if (underline) {
+            text = '<u>' + text + '</u>';
+        }
+
+        return '<span style="' + style + '">' + text + '</span>';
+    }
+
+    document.getElementById("bold").addEventListener("click", function() {
+        this.classList.toggle("active");
+        formatText("bold");
+    });
+
+    document.getElementById("italic").addEventListener("click", function() {
+        this.classList.toggle("active");
+        formatText("italic");
+    });
+
+    document.getElementById("underline").addEventListener("click", function() {
+        this.classList.toggle("active");
+        formatText("underline");
+    });
+function more() {
+  document.getElementById("more").style.display = "block";
+}
+
+function closemore() {
+  document.getElementById("more").style.display = "none";
+}
+</script>
+</body>
+</html>
