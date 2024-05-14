@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Page title</title>
+    <script></script>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<p style="display:none;">JS</p>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+  AOS.init();
+</script>
+
+  
+
+
+<script>
+function openNav() {
+  document.getElementById("sidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("sidenav").style.width = "0";
+}
+</script>
+
+<script>
+    
+</script>
+   
+
+<!-- style sheet...-->
+<style>
+    *{
+        transition:3s;
+    }
+    body {
+           background-image:url('https://img.freepik.com/free-vector/futuristic-halftone-background_53876-90595.jpg?size=626&ext=jpg&ga=GA1.1.1137779161.1700239066&semt=ais');
+           background-size: 500px, 500px;
+           background-position:right;
+       }  
+    header{
+            background-image: url('https://www.shutterstock.com/image-illustration/3d-render-illustration-male-detective-260nw-2228762655.jpg');
+            color: white;
+            height:auto;
+            width:100%;
+            padding:30px;
+            border:none;
+            text-align:center;
+            background-size:500px 500px;
+            background-postion:fixed;
+    .Title{
+        color:white;
+        font-family:Courier;
+        font-size: 35px;
+        font-weight:bolder;
+        float:none;
+        text-align: left;
+    }       
+    .sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #030720ef;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+.cards{
+    
+}
+.heading{
+    color:red;
+    
+    
+}
+.mastercards{
+    
+}
+.nav-link{
+    color:white;
+    font-weight:bolder;
+}
+
+</style>
+</head>
+<body>
+    <header >
+ <div class="sidenav" id="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  
+        </div>       
+        
+        
+        <span style="font-size:30px;cursor:pointer;float:left;" onclick="openNav()">&#9776;</span><br><br>
+        
+        
+        <div style="text-align:right">
+         <h1 class="Title" data-aos="fade-right" data-aos-delay="700">
+            The Spy<br> Expanse
+        </h1>
+        <kbd data-aos="fade-down" data-aos-delay="1400" style="text-align:left;">Discover the truths and characteristics of the spy universe of the world. Informations regarding all secret intelligence agencies in the world. </kbd>
+        </div>
+        
+        <div class="container mt-3" data-aos="fade-up" data-aos-delay="2100">
+            <br>
+  <!-- Nav pills -->
+  <ul class="nav nav-pills" role="tablist">
+      
+    <li class="nav-item">
+      <a class="nav-link active" data-bs-toggle="pill" href="#home">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="pill" href="#docs">Documents</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="pill" href="#news">News</a>
+    </li>
+  </ul>
+        </div>
+        
+    </header>
+    <section>
+        <!-- Tab panes -->
+  <div class="tab-content">
+      <!-- home -->
+    <div data-aos="fade-left" data-aos-delay="2800"id="home" class="container tab-pane active"style="background:#010510ec;color:white;padding:20px;font-family:inconsolata;"><br>
+    <h1>Hello Guys! </h1><br>
+    
+      
+    </div>
+    <!-- end home -->
+    <!-- docs -->
+    <div id="docs" class="container tab-pane fade" style="background:;color:;padding:;font-family:;"><br>
+     
+    </div>
+    <!-- end docs -->
+    <!-- news -->
+    <div id="news" class="container tab-pane fade" style="background:;color:;padding:;font-family:;"><br>
+      
+    </div>
+    <!-- endnews -->
+  </div>
+
+        
+        
+    </section>
+</body>
+</html>
